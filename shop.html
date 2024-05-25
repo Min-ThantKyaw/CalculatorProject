@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+
+        }
+
+
+
+        table {
+            width: 100%;
+            justify-content: center;
+            border-collapse: collapse;
+            border: 1px solid green;
+
+        }
+
+        table thead {
+            background-color: green;
+
+
+        }
+
+        .table tr,
+        .table td,
+        .table th {
+            padding: 10px 20px;
+        }
+
+        table tr:nth-child(even) {
+            background-color: brown;
+        }
+
+        .api_img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .container {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>Price</td>
+                    <td>Rating</td>
+                    <td>Image</td>
+                </tr>
+            </thead>
+            <tbody id="content" class="">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <img src="">
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+<script>
+    let content = document.getElementById("content");
+    let list;
+    fetch("https://fakestoreapi.com/products")
+        .then((response) => response.json())
+        .then((result) => {
+            console.log(result);
+
+            for (let i = 0; i < result.length; i++) {
+                list += ` <tr>
+                    <td>${result[i].id}</td>
+                    <td>${result[i].title}</td>
+                    <td>${result[i].price}$</td>
+                    <td>${result[i].rating.rate}</td>
+                    <td> <a href="${result[i].image}">
+                        <img src='${result[i].image}' class="api_img"/></td>
+                </tr>`
+            }
+            content.innerHTML = list;
+
+        })
+
+
+</script>
+
+</html>

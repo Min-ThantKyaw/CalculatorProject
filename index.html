@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <titleRegister Form</title>
+        <style>
+            body {
+                background-color: aqua;
+            }
+
+            .content {
+                background-color: white;
+                width: 400px;
+
+                margin: auto;
+                margin-top: 10%;
+                border-radius: 2%;
+
+
+
+            }
+
+            label {
+                display: block;
+                margin: 0px 25px;
+                margin-top: 20px;
+            }
+
+            .title {
+                text-align: center;
+                padding-top: 30px;
+            }
+
+            .user_info {
+                width: 80%;
+                padding: 10px 15px;
+                margin: 0px 25px;
+                border: 2px solid red;
+
+            }
+
+            .checkBox {
+                margin: 0px 25px;
+                margin-top: 20px;
+            }
+
+            button {
+                background-color: blueviolet;
+                border: none;
+                color: black;
+                font-size: larger;
+                font-style: italic;
+                width: 90%;
+                height: 30px;
+                margin: 10px 20px;
+
+            }
+
+            a {
+                color: aqua;
+
+            }
+
+            .footer_text {
+                text-align: center;
+            }
+
+            .result {
+                text-align: center;
+                background-color: blueviolet;
+                border: none;
+                color: black;
+                font-size: larger;
+                font-style: italic;
+                width: 90%;
+                height: 30px;
+                margin: 10px 20px;
+
+            }
+
+            .error {
+                color: red;
+                margin: 25px;
+            }
+        </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="title">Calculator</div>
+        <div class="inputGroup">
+            <label for="">Number One:</label>
+            <input type="text" id="firstNumber" class="user_info" placeholder="Enter Number one">
+            <small class="error" id="numOneError">Number One is required!</small>
+        </div>
+        <div class="inputGroup">
+            <label for="">Number Two:</label>
+            <input type="email" id="secNumber" class="user_info" placeholder="Enter Number Two">
+            <small class="error" id="numTwoError">Number two is required!</small>
+        </div>
+
+        <div class="inputGroup">
+            <label for="">Operators</label>
+            <select class="user_info" id="operation">
+                <option value="empty" id="empty" id="operator">Choose Options...</option>
+                <option value="add">+</option>
+                <option value="minus">-</option>
+                <option value="multiply">*</option>
+                <option value="division">/</option>
+            </select>
+            <small class="error" id="operatorError">Operators is required!</small>
+        </div>
+        <div class="button_group">
+            <button type="button" id="btn_calculate" class="register_btn">Calculate</button>
+        </div>
+        <div class="result" id="result">
+            0000
+        </div>
+    </div>
+</body>
+<script src="calculator.js"></script>
+
+</html>
